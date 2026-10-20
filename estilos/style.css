@@ -260,23 +260,52 @@ footer a:hover {
 }
 
 @media screen and (min-width: 769px) {
+  main {
+    grid-template-columns: auto 300px 1fr auto ;
+  }
+
+  section#ficha {
+    grid-column: 2 / 3;
+    height: fit-content;
+    position: sticky;
+    top: 65px;
+  }
+
+  section#detalhes {
+    grid-column: 3 / 4;
+  }
+
   #skill-container {
     grid-template-columns: 1fr 1fr;
   }
 
   #projeto-container .projeto {
+    display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: center;
+    gap: 20px;
   }
 
+  #projeto-container .projeto > a {
+        display: block;
+        flex: 0 0 40%;
+        width: 40%;
+    }
+
   #projeto-container .projeto-info {
-    max-width: 70%;
+    flex: 1;
+    min-height: 0;
+    max-width: 60%;
   }
 
   #projeto-container .foto {
-    aspect-ratio: 1/1;
-    max-width: 30%;
-    max-height: 200px;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+    max-width: 100%;
+    max-height: none;
+    object-fit: cover;
   }
 }
 
